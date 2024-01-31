@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  web:
+    image: "kunalbarot3188/node-app:v2"
+    ports:
+      - "8000:8000"
