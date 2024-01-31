@@ -2,6 +2,9 @@ version: '3.9'
 
 services:
   web:
-    image: "kunalbarot3188/node-app:v2"
+    #image: "kunalbarot3188/node-app:v2"
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
