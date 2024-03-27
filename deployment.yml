@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodetodoapp
+  namespace: nodetodoapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodetodoapp
+  template:
+    metadata:
+      labels:
+        app: nodetodoapp
+    spec:
+      containers:
+      - name: nodetodoapp
+        image: kunalbarot3188/node-app:v3
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodetodoapp-service
+  namespace: nodetodoapp
+spec:
+  selector:
+    app: nodetodoapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 30004  # Unique nodePort for Nodetodo application
+  type: NodePort
