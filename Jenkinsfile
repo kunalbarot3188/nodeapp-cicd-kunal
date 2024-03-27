@@ -42,17 +42,17 @@ pipeline{
                 sh "npm install"
             }
         }
-        // stage("Docker Build & Push"){
-        //     steps{
-        //         script{
-        //            withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-        //                sh "docker build -t nodetodoapp ."
-        //                sh "docker tag nodetodoapp kunalbarot3188/node-app:v3 "
-        //                sh "docker push kunalbarot3188/node-app:v3 "
-        //             }
-        //         }
-        //     }
-        // }
+        stage("Docker Build & Push"){
+            steps{
+                script{
+                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                       sh "docker build -t nodetodoapp ."
+                       sh "docker tag nodetodoapp kunalbarot3188/node-app:v3 "
+                       sh "docker push kunalbarot3188/node-app:v3 "
+                    }
+                }
+            }
+        }
         stage('Deploy to container'){
             steps{
                 sh 'docker run -d --name nodetodoapp -p 8000:8000 kunalbarot3188/node-app:v3'
