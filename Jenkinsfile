@@ -17,16 +17,16 @@ pipeline{
                 cleanWs()
             }
         }
-        // stage('Checkout from Git'){
-        //     steps{
-        //         git branch: 'main', url: 'https://github.com/kunalbarot3188/javahelloworld.git'
-        //     }
-        // }
+        stage('Checkout from Git'){
+            steps{
+                git branch: 'main', url: 'https://github.com/kunalbarot3188/nodeapp-cicd-kunal.git'
+            }
+        }
         stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=nodetodpapp \
-                    -Dsonar.projectKey=nodetodpapp '''
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=nodetodapp \
+                    -Dsonar.projectKey=nodetodapp '''
                 }
             }
         }
