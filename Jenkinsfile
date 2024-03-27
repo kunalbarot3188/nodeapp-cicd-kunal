@@ -60,14 +60,15 @@ pipeline{
         }
         stage('Deploy to kubernets'){
             steps
-                // withAWS(credentials: 'aws-key', region: 'us-east-1') 
+                withAWS(credentials: 'aws-key', region: 'us-east-1') 
                 {
                 script{
                     withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                     sh 'kubectl apply -f deployment.yml -n nodetodoapp --validate=false'
                     }
                 }
-            }   
+            } 
+        }
     }
     }
 }
