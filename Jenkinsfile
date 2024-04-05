@@ -1,4 +1,4 @@
-@Library('shared-library-test') _
+@Library('shared-library') _
 
 def config = [
     projectName: 'nodeapp-cicd-kunal',
