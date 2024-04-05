@@ -1,9 +1,9 @@
 @Library('shared-library-test') _
 
 def config = [
-    projectName: 'my-project',
-    gitRepoUrl: 'https://github.com/my-user/my-repo.git',
-    sonarToken: 'my-sonar-token'
+    projectName: 'nodeapp-cicd-kunal',
+    gitRepoUrl: 'https://github.com/kunalbarot3188/nodeapp-cicd-kunal.git',
+    sonarToken: 'sonar-token'
 ]
 
 sonarPipeline(config)
