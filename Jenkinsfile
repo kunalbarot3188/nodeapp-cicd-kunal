@@ -1,14 +1,28 @@
-@Library('shared-library') _
+@Library('your-shared-library-name') _
 
 def config = [
-    projectName: 'nodeapp-cicd',
-    gitRepoUrl: 'https://github.com/kunalbarot3188/nodeapp-cicd-kunal.git',
-    sonarToken: 'sonar-token'
+    projectName: 'your-project-name',
+    gitRepoUrl: 'https://github.com/your-username/your-repo.git',
+    sonarToken: 'your-sonar-token'
 ]
 
-sonarPipeline(config)
+yourSharedLibraryName.call(config)
 
 
+// *********************************
+// // sucessful one
+
+// // @Library('shared-library') _
+
+// // def config = [
+// //     projectName: 'nodeapp-cicd',
+// //     gitRepoUrl: 'https://github.com/kunalbarot3188/nodeapp-cicd-kunal.git',
+// //     sonarToken: 'sonar-token'
+// // ]
+
+// // sonarPipeline(config)
+
+// *********************************
 
 
 // def COLOR_MAP = [
