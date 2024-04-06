@@ -6,7 +6,7 @@ def config = [
     sonarToken: 'sonar-token'
 ]
 
-shared-library.call(config)
+sonarPipeline.call(config)
 
 
 // *********************************
