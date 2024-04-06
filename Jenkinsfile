@@ -1,12 +1,12 @@
-@Library('your-shared-library-name') _
+@Library('shared-library') _
 
 def config = [
-    projectName: 'your-project-name',
-    gitRepoUrl: 'https://github.com/your-username/your-repo.git',
-    sonarToken: 'your-sonar-token'
+    projectName: 'nodeapp',
+    gitRepoUrl: 'https://github.com/kunalbarot3188/nodeapp-cicd-kunal.git',
+    sonarToken: 'sonar-token'
 ]
 
-yourSharedLibraryName.call(config)
+shared-library.call(config)
 
 
 // *********************************
