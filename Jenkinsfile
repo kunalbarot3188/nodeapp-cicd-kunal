@@ -1,7 +1,7 @@
 @Library('shared-library') _
 
 def config = [
-    projectName: 'nodeapp-cicd-kunal',
+    projectName: 'nodeapp-cicd',
     gitRepoUrl: 'https://github.com/kunalbarot3188/nodeapp-cicd-kunal.git',
     sonarToken: 'sonar-token'
 ]
